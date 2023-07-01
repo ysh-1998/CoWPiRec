@@ -1,0 +1,25 @@
+# data
+data_path: './dataset/'
+benchmark_filename: [train]
+alias_of_item_id: [item_id_list]
+load_col:
+  inter: [user_id, item_id_list, item_id]
+neg_sampling: ~
+transform: bert_input
+train_stage: pretrain
+# training
+epochs: 10
+save_step: 1
+train_batch_size: 256
+num_neighbors: 30
+sample_neighbors: 10
+pretrain_task: [BG]
+# optimizer
+adam_epsilon: 1e-8
+weight_decays: [0.01]
+learning_rates: [5e-5]
+learners: [adamw]
+schedules: [warmup_liner]
+params: [bert]
+clip_grad_norm: 1.0
+graph_agg: graphsage
