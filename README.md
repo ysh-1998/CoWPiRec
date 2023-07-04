@@ -16,7 +16,29 @@ cudatoolkit==11.3
 transformers==4.21.2
 ```
 
-## Datasets
+## Quick Start
+
+We provide the pre-trained model of CoWPiRec in ```saved/model/CoWPiRec-base``` and a preprocessed dataset of ```Scientific``` dataset in ```dataset/Scientific```. You can repreduce our experiment results following the steps below.
+
+Git clone this repository, you should first install git-lfs (https://git-lfs.com) for downloading the pre-trained model.
+```
+git lfs install
+git clone https://github.com/ysh-1998/CoWPiRec.git
+```
+Get the text-based item embedding with CoWPiRec.
+```
+python get_emb.py --gpu_id=0 --dataset Scientific
+```
+Train and evaluate on downstream datasets ```Scientific```.
+```
+python downstream/finetune.py --gpu_id=0 -d Scientific
+```
+
+## Pipeline
+
+The pipeline to repreduce CoWPiRec is shown below.
+
+### Datasets
 
 To preprocessing datasets, you should prepare tow raw_data files: 
 
@@ -44,7 +66,7 @@ dataset/
     data_name.user2index
 ```
 
-## Word Graph
+### Word Graph
 
 The word graph is a key component in pre-training of CoWPiRec and is constructed based on co-click items. Obtain the co-click item pairs first.
 
@@ -69,7 +91,7 @@ python ./WordGraph/get_word_graph.py --dataset dataset_name --topN 30
 
 argument ```--topN``` denotes the number of neighbors after filtering.
 
-## Pretraining
+### Pretraining
 
 Pre-train on single GPU.
 
@@ -83,7 +105,7 @@ Pre-train with multi GPUs.
 CUDA_VISIBLE_DEVICES=0,1,2,3 python ddp_pretrain.py
 ```
 
-## Downstream
+### Downstream
 
 Get item embedding using CoWPiRec.
 ```
