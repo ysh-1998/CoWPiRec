@@ -3,7 +3,7 @@
 This is the official implementation for *Collaborative Word-based Pre-trained Item Representation for Transferable Recommendation*.
 
 <div align=center>
-<img src="CoWPiRec.png" alt="image-20230301下午51543084" width="85%" />
+<img src="CoWPiRec.png" alt="CoWPiRec.png" width="100%" />
 </div>
 
 ## Requirements
@@ -31,7 +31,8 @@ python get_emb.py --gpu_id=0 --dataset Scientific
 ```
 Train and evaluate on downstream datasets ```Scientific```.
 ```
-python downstream/finetune.py --gpu_id=0 -d Scientific
+cd downstream
+python finetune.py --gpu_id=0 -d Scientific
 ```
 
 ## Pipeline
@@ -114,6 +115,7 @@ python get_emb.py --gpu_id=0 --dataset dataset_name \
 ```
 Downstream recommendation.
 ```
-python downstream/finetune.py --gpu_id=0 -d dataset_name
+cd downstream
+python finetune.py --gpu_id=0 -d dataset_name
 ```
 
