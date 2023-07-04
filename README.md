@@ -31,8 +31,7 @@ python get_emb.py --gpu_id=0 --dataset Scientific
 ```
 Train and evaluate on downstream datasets ```Scientific```.
 ```
-cd downstream
-python finetune.py --gpu_id=0 -d Scientific
+python downstream/finetune.py --gpu_id=0 -d Scientific
 ```
 
 ## Pipeline
@@ -115,7 +114,6 @@ python get_emb.py --gpu_id=0 --dataset dataset_name \
 ```
 Downstream recommendation.
 ```
-cd downstream
-python finetune.py --gpu_id=0 -d dataset_name
+python downstream/finetune.py --gpu_id=0 -d dataset_name
 ```
 
