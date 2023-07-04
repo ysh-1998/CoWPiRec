@@ -1,6 +1,7 @@
 import argparse
 from logging import getLogger
 import torch
+import os
 from recbole.config import Config
 from recbole.data import data_preparation
 from recbole.utils import init_seed, init_logger, get_trainer, set_color
@@ -11,7 +12,8 @@ from data.dataset import DownstreamDataset
 
 def finetune(dataset, **kwargs):
     # configurations initialization
-    props = ['props/SeqRec.yaml', 'props/finetune.yaml']
+    current_path = os.path.dirname(os.path.abspath(__file__))
+    props = [os.path.join(current_path,'props/SeqRec.yaml'), os.path.join(current_path,'props/finetune.yaml')]
     print(props)
 
     # configurations initialization
