@@ -10,4 +10,5 @@ topk: [10, 50]
 metrics: [HIT, NDCG]
 valid_metric: NDCG@10
 eval_batch_size: 2048
+learning_rate: 3e-4
 stopping_step: 10
