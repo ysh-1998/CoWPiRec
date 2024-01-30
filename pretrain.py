@@ -7,8 +7,8 @@ from trainer import PretrainTrainer
 from recbole.utils import init_seed, init_logger
 
 from CoWPiRec import CoWPiRec
-from data.dataset import CoWPiRecDataset,PretrainCoWPiRecDataset
-from data.dataloader import CustomizedTrainDataLoader,CustomizedFullSortEvalDataLoader
+from data.dataset import PretrainCoWPiRecDataset
+from data.dataloader import CustomizedTrainDataLoader
 
 
 def pretrain(dataset, **kwargs):
