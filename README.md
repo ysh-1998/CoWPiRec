@@ -18,11 +18,10 @@ transformers==4.21.2
 
 ## Quick Start
 
-We provide the pre-trained model of CoWPiRec in ```saved/model/CoWPiRec-base``` and a preprocessed dataset of ```Scientific``` dataset in ```dataset/Scientific```. You can repreduce our experiment results following the steps below.
+We provide a preprocessed dataset of ```Scientific``` dataset in ```dataset/Scientific```. You can download the pretrained model from [Google Drive](https://drive.google.com/drive/folders/1VzGNSaEFp8T3ongi5mIHAeCf1gDQxhSS?usp=sharing) and place it in ```saved/model```. Then You can repreduce our experiment results following the steps below.
 
-Git clone this repository, you should first install git-lfs (https://git-lfs.com) for downloading the pre-trained model.
+Git clone this repository.
 ```
-git lfs install
 git clone https://github.com/ysh-1998/CoWPiRec.git
 ```
 Get the text-based item embedding with CoWPiRec.
